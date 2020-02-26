@@ -17,6 +17,8 @@ from infogami.utils.view import public, safeint, render
 from infogami.utils.view import render_template  # noqa: F401 used for its side effects
 from infogami.utils.context import context
 
+from utils import render_component
+
 from openlibrary import accounts
 
 from openlibrary.plugins.upstream import addbook, covers, merge_authors, models, utils
@@ -48,10 +50,12 @@ class change_photo(change_cover):
 
 del delegate.modes['change_cover']     # delete change_cover mode added by openlibrary plugin
 
+
 class merge_work(delegate.page):
-    path = "(/works/OL\d+W)/merge"
-    def GET(self, key):
-        return "This looks like a good place for a merge UI!"
+    path = "/works/merge"
+
+    def GET(self, keys):
+        return render_component('MergeUI.vue')
 
     def POST(self, key):
         pass
