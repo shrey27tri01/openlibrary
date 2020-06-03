@@ -36,6 +36,7 @@
     "css-loader": "3.6.0",
     "datatables.net-dt": "1.10.21",
     "eslint": "5.16.0",
+    "isbn3": "1.1.1",
     "jest": "25.1.0",
     "detect-libc": "1.0.3",
     "diff": "4.0.1",
