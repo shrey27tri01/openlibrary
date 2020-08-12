@@ -41,7 +41,7 @@ i18n:
 
 git:	
 #Do not run these on DockerHub since it recursively clones all the repos before build initiates
-ifeq ($(DOCKER_HUB),FALSE)
+ifndef DOCKER_HUB
 	git submodule init
 	git submodule sync
 	git submodule update
